@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 #####################################TELEGRAMLINUXSERVER################################################ by Skothc875
-# Version: 1.0
+# Version: 1.1
 
 print("[+]TelegaServer started")
 import config
