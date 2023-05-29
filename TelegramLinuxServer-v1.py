@@ -79,7 +79,7 @@ def auth1(message):
 
 def auth2(message):
     global aut
-    if hashlib.sha256(message.text.encode('utf-8')).hexdigest() == hashpass:
+    if hashlib.sha512(message.text.encode('utf-8')).hexdigest() == hashpass:
 
         bot.delete_message(message.chat.id, message.message_id)
         aut = True
