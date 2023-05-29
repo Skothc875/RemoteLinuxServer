@@ -17,7 +17,7 @@ path = ''
 time.sleep(0.3)
 subprocess.call("clear", shell=True)
 
-print("#####################################TELEGASERVER#V1#################################### by Skothc875")
+print("#####################################TELEGASERVER#V1.1#################################### by Skothc875")
 time.sleep(0.2)
 print("                                                                                                              ")
 print("                                                                                                              ")
