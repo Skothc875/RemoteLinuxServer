@@ -3,19 +3,19 @@
 # Version: 1.2
 
 import config
-if language == 1:
+if config.lang == 1:
     import languages_folder.EN_lang as lan
 
-elif language == 2:
+elif config.lang == 2:
     import languages_folder.RU_lang as lan 
 
-elif language == 3:
+elif config.lang == 3:
     import languages_folder.ES_lang as lan 
 
-elif language == 4:
+elif config.lang == 4:
     import languages_folder.FR_lang as lan
 
-elif language == 5:
+elif config.lang == 5:
     import languages_folder.DE_lang as lan
          
 print(lan.started)
