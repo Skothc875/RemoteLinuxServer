@@ -190,10 +190,14 @@ def disconnect(message):
     global aut
     aut = False
     bot.send_message(message.chat.id, lan.disconnect)
-    
-try:
-    bot.polling(none_stop=True)
 
-
-except:
-    print(lan.err_init)
+def bot_start()
+    try:
+        bot.polling(none_stop=True)
+        print(lan.host_up)
+    except:
+        print(lan.err_init)
+        print(lan.timeout_60)
+        time.sleep(60)
+        bot_start()
+bot_start()
