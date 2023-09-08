@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 #####################################TELEGRAMLINUXSERVER################################################ by Skothc875
-# Version: 1.2
+# Version: 1.2A
 
 import config
 if config.lang == 1:
