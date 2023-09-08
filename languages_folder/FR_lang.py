@@ -20,3 +20,4 @@ file_save_in = "Le fichier a été enregistré avec succès dans le répertoire 
 disconnect = "Déconnexion du serveur..."
 err_init = "Erreur lors de l'initialisation du bot."
 host_up = "Le serveur est opérationnel !"
+timeout_60 = "Délai d'attente 1 minute..."
