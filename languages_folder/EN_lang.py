@@ -20,7 +20,7 @@ file_save_in = "The file was successfully saved in the directory"
 disconnect = "Disconnecting from server..."
 err_init = "Error initializing bot."
 host_up = "Server is up !"
-
+timeout_60 = "Timeout 1 minute..."
 
 
 
