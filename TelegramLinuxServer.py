@@ -191,7 +191,7 @@ def disconnect(message):
     aut = False
     bot.send_message(message.chat.id, lan.disconnect)
 
-def bot_start()
+def bot_start():
     try:
         bot.polling(none_stop=True)
         print(lan.host_up)
