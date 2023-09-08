@@ -194,7 +194,7 @@ def disconnect(message):
 def bot_start():
     try:
         bot.polling(none_stop=True)
-        print(lan.host_up)
+        
     except:
         print(lan.err_init)
         print(lan.timeout_60)
