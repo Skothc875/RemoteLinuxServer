@@ -19,5 +19,5 @@ err_sand_file = "Error al enviar el archivo, verifique el nombre del archivo."
 file_save_in = "El archivo se guardó correctamente en el directorio "
 disconnect = "Desconectando del servidor..."
 err_init = "Error al inicializar el bot."
-host_up = "El servidor está activo !"
+
 timeout_60 = "Tiempo de espera 1 minuto..."
