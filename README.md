@@ -1,5 +1,5 @@
-TelegramLinuxServer version 1.2 by Skothc875
-documentation for TLS v1.2
+TelegramLinuxServer version 1.2A by Skothc875
+documentation for TLS v1.2A
 
  
 RU документация
