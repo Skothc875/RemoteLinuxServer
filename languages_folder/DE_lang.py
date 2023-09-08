@@ -19,5 +19,5 @@ err_sand_file = "Beim Senden der Datei ist ein Fehler aufgetreten. Bitte überpr
 file_save_in = "Die Datei wurde erfolgreich im Verzeichnis gespeichert "
 disconnect = "Verbindung zum Server wird getrennt..."
 err_init = "Fehler beim Initialisieren des Bots."
-host_up = "Der Server ist aktiv !"
+
 timeout_60 = "Timeout 1 Minute..."
