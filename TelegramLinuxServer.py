@@ -194,6 +194,7 @@ def disconnect(message):
 def bot_start():
     try:
         bot.polling(none_stop=True)
+        print("Started")
         
     except:
         print(lan.err_init)
