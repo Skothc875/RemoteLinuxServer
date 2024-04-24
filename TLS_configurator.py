@@ -5,20 +5,21 @@ try:
     import telebot
 except:
     subprocess.call("pip install pyTelegramBotAPI", shell=True)
-print("1) English")
-print("2) Russian")
-print("3) Spanish")
-print("4) French")
-print("5) German")
-language = int(input("Choose your language: "))
+
 while cho_lang:
+    print("1) English")
+    print("2) Russian")
+    print("3) Spanish")
+    print("4) French")
+    print("5) German")
+    language = int(input("Choose your language: "))
     if language == 1:
         import languages_folder.EN_lang as lan
         cho_lang = False
     
     elif language == 2:
         import languages_folder.RU_lang as lan
-        cho_lang = False 
+        cho_lang = False
 
     elif language == 3:
         import languages_folder.ES_lang as lan
