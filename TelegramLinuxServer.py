@@ -157,11 +157,14 @@ def start_cm(message):
 
 
 def changing_directory(path, message):
-    try:
-        os.chdir(path)
-        bot.register_next_step_handler(bot.send_message(message.chat.id, subprocess.check_output("pwd", shell=True) + subprocess.check_output("whoami", shell=True)), start_cm)
-    except:
-    	bot.register_next_step_handler(bot.send_message(message.chat.id, lan.err_cd), start_cm)
+    if path == None:
+        os.chdir("~/")
+    else:
+        try:
+            os.chdir(path)
+            bot.register_next_step_handler(bot.send_message(message.chat.id, subprocess.check_output("pwd", shell=True) + subprocess.check_output("whoami", shell=True)), start_cm)
+        except:
+    	    bot.register_next_step_handler(bot.send_message(message.chat.id, lan.err_cd), start_cm)
 
 
 def download(message):
