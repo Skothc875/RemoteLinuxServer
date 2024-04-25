@@ -125,7 +125,7 @@ def start_cm(message):
 
     if command1 == 'cd':
         match = re.search(r"cd\s['\"]?(.*?)['\"]?$", message.text)
-        if == None:
+        if match == None:
             changing_directory(None, message)
         else:
             directory = match.group(1)  # Извлекаем путь или папку из регулярного выражения
