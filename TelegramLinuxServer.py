@@ -20,6 +20,7 @@ elif config.lang == 5:
          
 print(lan.started)
 import os
+import re
 import telebot
 import hashlib
 import subprocess
@@ -120,10 +121,14 @@ def start_cm(message):
     global path
     command = message.text.split()
     command1 = command.pop(0)
+    
 
     if command1 == 'cd':
-        path = command.pop(0)
-        changing_directory(path, message)
+        match = re.search(r"cd\s['\"]?(.*?)['\"]?$", message)
+        directory = match.group(1)  # Извлекаем путь или папку из регулярного выражения
+        directory = os.path.expanduser(directory)  # Расширяем сокращенные пути (например, '~' становится /home/username)
+        directory = os.path.abspath(directory)  # Преобразуем относительный путь в абсолютный
+        changing_directory(directory, message)
 
     elif command1 == '/download':
         bot.register_next_step_handler(
