@@ -124,7 +124,7 @@ def start_cm(message):
     
 
     if command1 == 'cd':
-        match = re.search(r"cd\s['\"]?(.*?)['\"]?$", message)
+        match = re.search(r"cd\s['\"]?(.*?)['\"]?$", message.text)
         directory = match.group(1)  # Извлекаем путь или папку из регулярного выражения
         directory = os.path.expanduser(directory)  # Расширяем сокращенные пути (например, '~' становится /home/username)
         directory = os.path.abspath(directory)  # Преобразуем относительный путь в абсолютный
