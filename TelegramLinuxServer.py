@@ -124,14 +124,7 @@ def start_cm(message):
     
 
     if command1 == 'cd':
-        match = re.search(r"cd\s['\"]?(.*?)['\"]?$", message.text)
-        if match == None:
-            changing_directory(None, message)
-        else:
-            directory = match.group(1)  # Извлекаем путь или папку из регулярного выражения
-            directory = os.path.expanduser(directory)  # Расширяем сокращенные пути (например, '~' становится /home/username)
-            directory = os.path.abspath(directory)  # Преобразуем относительный путь в абсолютный
-            changing_directory(directory, message)
+        changing_directory(message.text)
 
     elif command1 == '/download':
         bot.register_next_step_handler(
@@ -158,16 +151,26 @@ def start_cm(message):
     else:
         bot.register_next_step_handler(bot.send_message(message.chat.id, lan.err_comm + str(subprocess.call(message.text, shell=True))), start_cm)
 
+def extract_directory(cd_command):
+    # Используем регулярное выражение для извлечения пути или папки из команды 'cd'
+    match = re.search(r"cd\s['\"]?(.*?)['\"]?$", cd_command)
+    
+    if match:
+        directory = match.group(1)  # Извлекаем путь или папку из регулярного выражения
+        directory = os.path.expanduser(directory)  # Расширяем сокращенные пути (например, '~' становится /home/username)
+        directory = os.path.abspath(directory)  # Преобразуем относительный путь в абсолютный
 
-def changing_directory(path, message):
-    if path == None:
-        os.chdir("~/")
+        return directory
     else:
-        try:
-            os.chdir(path)
-            bot.register_next_step_handler(bot.send_message(message.chat.id, subprocess.check_output("pwd", shell=True) + subprocess.check_output("whoami", shell=True)), start_cm)
-        except:
-    	    bot.register_next_step_handler(bot.send_message(message.chat.id, lan.err_cd), start_cm)
+        return "~/"
+        
+def changing_directory(message):
+    
+    try:
+        os.chdir(extract_directory(message))
+        bot.register_next_step_handler(bot.send_message(message.chat.id, subprocess.check_output("pwd", shell=True) + subprocess.check_output("whoami", shell=True)), start_cm)
+    except:
+    	bot.register_next_step_handler(bot.send_message(message.chat.id, lan.err_cd), start_cm)
 
 
 def download(message):
