@@ -154,6 +154,7 @@ def start_cm(message):
 def extract_directory(cd_command):
     # Используем регулярное выражение для извлечения пути или папки из команды 'cd'
     match = re.search(r"cd\s['\"]?(.*?)['\"]?$", cd_command)
+    home_dir = os.path.expanduser("~")
     
     if match:
         directory = match.group(1)  # Извлекаем путь или папку из регулярного выражения
@@ -162,7 +163,7 @@ def extract_directory(cd_command):
 
         return directory
     else:
-        return "~/"
+        return home_dir
         
 def changing_directory(message):
     
