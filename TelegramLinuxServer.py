@@ -124,7 +124,7 @@ def start_cm(message):
     
 
     if command1 == 'cd':
-        changing_directory(message.text)
+        changing_directory(message)
 
     elif command1 == '/download':
         bot.register_next_step_handler(
@@ -167,7 +167,7 @@ def extract_directory(cd_command):
 def changing_directory(message):
     
     try:
-        os.chdir(extract_directory(message))
+        os.chdir(extract_directory(message.text))
         bot.register_next_step_handler(bot.send_message(message.chat.id, subprocess.check_output("pwd", shell=True) + subprocess.check_output("whoami", shell=True)), start_cm)
     except:
     	bot.register_next_step_handler(bot.send_message(message.chat.id, lan.err_cd), start_cm)
