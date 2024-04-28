@@ -178,8 +178,9 @@ def changing_directory(message):
 def download(message):
     if message.text == '/cancel':
         system(message)
-    file = open(message.text, "rb")
+    
     try:
+        file = open(message.text, "rb")
         bot.send_document(message.chat.id, file)
     
     except:
