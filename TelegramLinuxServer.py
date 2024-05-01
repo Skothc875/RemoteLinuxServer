@@ -1,8 +1,11 @@
 #!/usr/bin/python3
 #####################################TELEGRAMLINUXSERVER################################################ by Skothc875
 # Version: 1.2A
-
-import config
+try:
+    import config
+except:
+    print("The configuration file was not found; it is necessary for the program to work. Please create it.")
+    exit()
 if config.lang == 1:
     import languages_folder.EN_lang as lan
 
